@@ -5,9 +5,9 @@ import {schemaTypes} from './schemas'
 
 export default defineConfig({
   name: 'default',
-  title: 'tiktook',
+  title: 'sanity-backend',
 
-  projectId: 'y49hs1ra',
+  projectId: 'xiepnnej',
   dataset: 'production',
 
   plugins: [deskTool(), visionTool()],
