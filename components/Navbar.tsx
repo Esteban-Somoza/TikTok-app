@@ -22,7 +22,7 @@ function Navbar() {
 
       <div>SEARCH</div>
 
-      {/* <div>
+      <div>
         {user ? (
           <div>Logged in</div>
         ) : (
@@ -31,7 +31,7 @@ function Navbar() {
           </div>
         )
         }
-      </div> */}
+      </div>
     </div>
   )
 }
