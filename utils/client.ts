@@ -7,3 +7,4 @@ export const client = sanityClient({
   useCdn: false,
   token: process.env.NEXT_PUBLIC_SANITY_TOKEN,
 });
+
