@@ -7,10 +7,12 @@ import { BiSearch } from 'react-icons/bi'
 import { IoMdAdd } from 'react-icons/io'
 import Logo from '../utils/tiktik-logo.png'
 import { GoogleLogin, googleLogout } from '@react-oauth/google'
+import { createOrGetUser } from 'utils'
 
+import useAuthStore from 'store/authStore'
 
 function Navbar() {
-  const user = false
+  const {userProfile, addUser} = useAuthStore();
   
   return (
     <div className='w-full flex justify-between items-center border-b-2 border-gray-200 py-2 px-4'>
@@ -23,11 +25,11 @@ function Navbar() {
       <div>SEARCH</div>
 
       <div>
-        {user ? (
-          <div>Logged in</div>
+        {userProfile?.userName ? (
+          <div>{userProfile.userName}</div>
         ) : (
           <div>
-            <GoogleLogin onSuccess={(response) => console.log(response)} onError={() => console.log('error')}/>
+            <GoogleLogin onSuccess={(response) => createOrGetUser(response, addUser)} onError={() => console.log('error')}/>
           </div>
         )
         }
