@@ -20,28 +20,35 @@ function Upload() {
     const router = useRouter()
 
     const uploadVideo = async (e: any) => {
-        const selectedFile = e.target.files[0]
-        console.log(selectedFile);
-        if (!selectedFile) return;
-        const fileTypes = ['video/mp4', 'video/webm', 'video/ogg']
+        try {
+            const selectedFile = e.target.files[0]
+            console.log(selectedFile);
+            if (!selectedFile) return;
+            const fileTypes = ['video/mp4', 'video/webm', 'video/ogg']
 
-        if (fileTypes.includes(selectedFile.type)) {
-            client.assets.upload('file', selectedFile, {
-                contentType: selectedFile.type,
-                filename: selectedFile.name
-            }).then((data) => {
-                setIsLoading(false)
-                setVideoAsset(data)
-            })
-        }
-        else {
-            setIsLoading(false);
-            setWrongFileType(true);
+            // bug en el siguiente bloque de código
+            if (fileTypes.includes(selectedFile.type)) {
+                client.assets.upload('file', selectedFile, {
+                    contentType: selectedFile.type,
+                    filename: selectedFile.name
+                }).then((data) => {
+                    setIsLoading(false)
+                    setVideoAsset(data)
+                })
+            }
+            else {
+                setIsLoading(false);
+                setWrongFileType(true);
+            }
+        } catch (error) {
+
         }
     }
 
     const handlePost = async () => {
         if (caption && videoAsset?._id && category) {
+            console.log('asjdhf');
+            
             setSavingPost(true);
 
             const document = {
