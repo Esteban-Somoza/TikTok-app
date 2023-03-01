@@ -110,7 +110,7 @@ function Upload() {
                                             <p className='text-gray-400 text-center mt-10 text-sm leading-10'>
                                                 MP4 or WebM or ogg <br />
                                                 720x1280px or higher <br />
-                                                Pp to 10 minutes <br />
+                                                Up to 10 minutes <br />
                                                 Less than 2GB
                                             </p>
                                             <p className='bg-[#F51997] text-center mt-10 rounded 
