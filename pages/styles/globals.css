@@ -9,10 +9,6 @@ body {
   box-sizing: border-box;
 }
 
-.nico {
-  color: red
-}
-
 a {
   color: inherit;
   text-decoration: none;
